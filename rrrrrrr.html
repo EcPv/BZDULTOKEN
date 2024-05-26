@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Общага</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+			<div class="title">
+				<h1>Общага</h1>
+			</div>
+			
+            <div class="stats">
+                <p>Ваш баланс: <br/><span id="score">0</span>$BZDUL</p>
+				<p>Доход: <br/>1$BZDUL/клик</p>
+            </div>
+        </div>
+        <div class="click-zone">
+            <button id="click-button">Майнить $BZDUL</button>
+        </div>
+        <div class="menu">
+            <button id="upgrade-button">Магазин</button>
+            <button id="settings-button">Настройки</button>
+        </div>
+    </div>
+
+   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+   <script>
+	const clickButton = document.getElementById('click-button');
+	const scoreElement = document.getElementById('score');
+	const levelElement = document.getElementById('level');		
+	
+	let tg = window.Telegram.WebApp;
+	let score = 0;
+	let level = 1;
+
+	clickButton.addEventListener('click', () => {
+		score++;
+		scoreElement.textContent = score;
+});
+   </script>
+</body>
+</html>
